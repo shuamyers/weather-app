@@ -1,0 +1,31 @@
+.weather-list-container {
+  margin-top: 50px;
+}
+
+li {
+  list-style: none;
+}
+
+h3 {
+
+}
+
+.weather-item {
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.container {
+  margin-left: 100px;
+}
+
+.weather-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  span {
+    margin-left: 5px;
+  }
+}

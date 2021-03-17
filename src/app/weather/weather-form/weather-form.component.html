@@ -1,0 +1,37 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <select formControlName="cityId" class="form-select"
+                aria-label="Select City">
+          <option [value]="null" selected disabled>Select City</option>
+          <option *ngFor="let option of options" [value]="option.id">{{option.name}}</option>
+        </select>
+        <div class="invalid" [ngClass]="{'show': form.get('cityId')?.errors?.required && isSubmitted}">
+          Please select a city.
+        </div>
+      </div>
+      <div class="btn-container col">
+        <div class="input-group">
+          <input type="text" class="form-control"
+                 placeholder="Units(standard, imperial, etc)"
+                 formControlName="units"
+                 aria-label="units">
+          <div class="invalid" [ngClass]="{'show': form.get('units')?.errors && isSubmitted}">
+            Unit must be ( Standard,Imperial,Metric, Celsius, Kelvin, Fahrenheit ).
+          </div>
+        </div>
+        <div class="col-xs">
+          <button class="plus-btn" type="submit">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="weather-display" *ngIf="weatherData">
+  <h4>{{weatherData.name}}:
+    <span>{{weatherData.tempSymbol}}</span> {{weatherData.main?.temp}} {{weatherData.unitSymbol}}
+  </h4>
+  <img [src]="'http://openweathermap.org/img/w/'+ weatherData.weather[0].icon + '.png'">
+</div>

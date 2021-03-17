@@ -1,0 +1,11 @@
+<section class="weather-list-container">
+  <h3>Weather in:</h3>
+  <ul class="weather-list container" *ngFor="let weatherItem of weatherInfoList; let i = index">
+    <li class="weather-item">
+      <span class="list-num">{{i + 1}}.</span>
+      <span>{{weatherItem.name}}</span>
+      <span>{{weatherItem.tempSymbol}}</span>
+      {{weatherItem.main?.temp}} {{weatherItem.unitSymbol}}; {{weatherItem.weather[0]?.description}}
+    </li>
+  </ul>
+</section>

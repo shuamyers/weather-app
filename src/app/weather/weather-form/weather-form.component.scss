@@ -1,0 +1,38 @@
+.weather-display {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input, select {
+  max-width: 350px;
+}
+
+
+.btn-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  justify-self: center;
+}
+
+.plus-btn {
+  background: none;
+  border: none;
+  font-size: 60px;
+  font-weight: bold;
+  padding: 0 5px;
+  line-height: 0.5;
+}
+
+.invalid {
+  padding: 5px;
+  color: #f52626;
+  display: none;
+}
+
+.invalid.show {
+  visibility: visible;
+  display: block;
+}

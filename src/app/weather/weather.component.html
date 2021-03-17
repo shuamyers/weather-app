@@ -1,0 +1,10 @@
+<header class="main container">
+  <h1 class="main-title">Weather Check</h1>
+</header>
+<main class="main container">
+  <app-weather-form *ngFor="let item of dashboardFromsIndexs let i = index;"
+                    (weatherInfo)="addWeatherInfo($event, i)"></app-weather-form>
+  <app-weather-list [weatherInfoList]="weatherInfoList"></app-weather-list>
+</main>
+
+
